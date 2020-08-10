@@ -3,14 +3,34 @@
 {%block title%}Book Review{%endblock%}
 
 {%block content%}
-<h2>Book Listing</h2>
-
-<a href="{{url_for('add_book')}}" class="btn btn-primary">Add Book</a>
-
-<ul class="list-group mt-3">
-    {%for b in books %}
-    <li class="list-group-item">
-        <input type="text" book-id="{{b._id}}"/>
-    </li>
-    {%endfor%}
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">BookReview</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Add book <span class="sr-only">(current)</span></a>
+      </li>
+  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+<!-- table -->
+    <table class="table">
+    <a href="{{url_for('add_book')}}" class="btn btn-primary">Add Book</a>
+    <thread>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Comments</th>
+        </tr>
+        {%for book in books%}
+        <tr>
+            <th>{{book.title}}</th>
+            <th>{{book.author}}</th>
+            <th>{{book.comments}}</th>
+        {%endfor%}
+        </tr>
+    </thread>
 {%endblock%}
