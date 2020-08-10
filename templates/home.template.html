@@ -1,0 +1,16 @@
+{%extends 'layout.template.html' %}
+
+{%block title%}Book Review{%endblock%}
+
+{%block content%}
+<h2>Add book</h2>
+#list all books in main page
+#have button to add books
+<a href="{{url_for('add_book')}}" class="btn btn-primary">New Task</a>
+
+<ul class="list-group mt-3">
+{%for t in tasks %}
+    <li class="list-group-item">
+        <input type="checkbox" class="task-checkbox" data-task-id="{{t._id}}" checked/>
+    </li>
+{%endfor%}
