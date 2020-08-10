@@ -1,0 +1,23 @@
+{%extends 'layout.template.html'%}
+
+{%block title%}Add book{%endblock%}
+
+{%block content%}
+<form method="POST">
+    <h1>Add book</h1>
+    <div class =
+    "form-group">
+        <label>Title:</label>
+        <input type="text" name="book_title" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Author:</label>
+        <input type="text" name="book_author" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Comments:</label>
+        <textarea name="book_comments" class="form-control"></textarea>
+    </div>
+    <input type="submit" class="btn btn-primary mt-2"/>
+</form>
+{%endblock%}

@@ -17,20 +17,25 @@ DB_NAME = "book_review"
 # Display all the book listing
 @app.route('/')
 def home():
-    bk = client[DB_NAME].books.find()
-    return render_template('home.template.html', books=bk)
+    books = client[DB_NAME].bookListing.find()
+    return render_template('home.template.html', books=books)
 
-@app.route('/add/book')
-def show_create_form():
+@app.route('/book/add')
+def add_book():
     return render_template('add_book.template.html')
 
-@app.route('/add/book', methods=['POST'])
-def create_task():
-    # extract information from the form
-    title = request.form.get('title')
-    author = request.form.get('author')
-    comments = request.form.get('comments')
+@app.route('/book/add', methods=['POST'])
+def process_add_book():
+    book_title = request.form.get('title')
+    book_author = request.form.get('author')
+    book_comments = request.form.get('comments')
 
+    client[DB_NAME].bookListing.insert_one({
+        'title': book_title,
+        'author': book_author,
+        'comments': book_comments,
+    })
+    return "New book added"
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
