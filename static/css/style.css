@@ -1,18 +1,23 @@
 html{ 
-  background: url(static/img/pexels-tomas-anunziata-412018.jpg) no-repeat center center fixed;
+  background-image: url('/static/img/background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-h1{
-    color: green;
-}
+
 body{
-   font-family: "Open Sans", sans-serif, Arial, Helvetica;
-  font-size: 15px;
-  font-weight: 500;
-  }
+    color: green;
+    font-family: "Open Sans", sans-serif, Arial, Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#header th :scope{
+  background-color: #4CAF50;
+  color: white;
+}
+
 table .book-listing{
   table-layout: fixed;
   width: 120px;
