@@ -1,7 +1,5 @@
-html,
+/* html,
 body { 
-  width: 100%;
-  height: 100%;
   font-family: "Open Sans", sans-serif, Arial, Helvetica;
   font-size: 15px;
   font-weight: 500;
@@ -12,14 +10,16 @@ body {
   background-size: cover;
 }
 
-table .table{
+table .book-listing{
   table-layout: fixed;
   width: 120px;
   border: 1px solid red;
 }
-
+#header{
+    font-display: red;
+}
 td {
   border: 1px solid blue;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
