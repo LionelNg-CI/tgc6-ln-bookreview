@@ -28,17 +28,17 @@
     <table class="table book-listing mt-">  
         <thread>
             <tr id="header">
-                <th scope="col">Title</th>
-                <th scope="col">Author</th>
-                <th scope="col">Comments</th>
+                <th scope="col" class="align-middle">Title</th>
+                <th scope="col"class="align-middle">Author</th>
+                <th scope="col"class="align-middle">Comments</th>
             </tr>
         </thread>
         <tbody>
                 {%for book in books%}
             <tr>
-                <th>{{book.title}}</th>
-                <th>{{book.author}}</th>
-                <th>{{book.comments}}</th>
+                <th class="align-middle">{{book.title}}</th>
+                <th class="align-middle">{{book.author}}</th>
+                <th class="align-middle">{{book.comments}}</th>
             </tr>
                 {%endfor%}
         </tbody>

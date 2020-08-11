@@ -15,14 +15,18 @@ DB_NAME = "book_review"
 
 # The Home Route
 # Display all the book listing
+
+
 @app.route('/')
 def home():
     books = client[DB_NAME].bookListing.find()
     return render_template('home.template.html', books=books)
 
+
 @app.route('/book/add')
 def add_book():
     return render_template('add_book.template.html')
+
 
 @app.route('/book/add', methods=['POST'])
 def process_add_book():
@@ -36,6 +40,7 @@ def process_add_book():
         'comments': book_comments,
     })
     return "New book added"
+
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
