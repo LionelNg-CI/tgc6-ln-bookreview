@@ -1,15 +1,18 @@
-/* html,
-body { 
-  font-family: "Open Sans", sans-serif, Arial, Helvetica;
-  font-size: 15px;
-  font-weight: 500;
+html{ 
   background: url(static/img/pexels-tomas-anunziata-412018.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-
+h1{
+    color: green;
+}
+body{
+   font-family: "Open Sans", sans-serif, Arial, Helvetica;
+  font-size: 15px;
+  font-weight: 500;
+  }
 table .book-listing{
   table-layout: fixed;
   width: 120px;
@@ -22,4 +25,4 @@ td {
   border: 1px solid blue;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis; */
+  text-overflow: ellipsis;
