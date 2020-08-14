@@ -4,7 +4,7 @@ body{
     font-family: "Open Sans", sans-serif, Arial, Helvetica;
     font-size: 15px;
     font-weight: 500;
-    padding-top: 40px;
+    padding-top: 70px;
 }
 
 html{ 
@@ -21,17 +21,11 @@ html{
   background-color: rgb(28, 155, 34);
   color: white;
 }
-
-.table .book-listing{
-  table-layout: fixed;
-  width: 120px;
-  border: 1px solid red;
-}
 div.transbox {
   margin: 30px;
   background-color: lightgrey;
   border: 1px solid black;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 div.transbox p {
@@ -45,4 +39,40 @@ td {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+#navbar{
+    width: 100%;
+}
+#navbar+div{
+    width: 100%;
+    padding: 0px 20px;
+}
+#title{
+    color: #426625;
+
+}
+#author{
+    color:#51A60A;
+}
+#comments{
+    color:#5C7B42;
+}
+#navbar a{
+color:#5FD101;
+}
+#books{
+  border-collapse: collapse;
+  width: 100%;
+}
+table, th, td {
+  border: 1px solid black;
+}
+#books th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+#books td, #books th {
+  border: 1px solid #ddd;
+  padding: 10px;
 }
