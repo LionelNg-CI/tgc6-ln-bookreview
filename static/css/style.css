@@ -1,9 +1,10 @@
 body{
-    color: blue;
+    color: black;
+    background-color: rgba(140, 148, 150, 0.6);
     font-family: "Open Sans", sans-serif, Arial, Helvetica;
     font-size: 15px;
     font-weight: 500;
-    scroll-padding-top: 70px; /* height of sticky header */
+    padding-top: 40px;
 }
 
 html{ 
@@ -12,18 +13,31 @@ html{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  scroll-padding-top: 70px; /* height of sticky header */
+  /* height of sticky header */
+  scroll-padding-top: 70px; 
 }
 
-#header th :scope{
-  background-color: #4CAF50;
+#header th{
+  background-color: rgb(28, 155, 34);
   color: white;
 }
 
-table .book-listing{
+.table .book-listing{
   table-layout: fixed;
   width: 120px;
   border: 1px solid red;
+}
+div.transbox {
+  margin: 30px;
+  background-color: lightgrey;
+  border: 1px solid black;
+  opacity: 0.6;
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
 }
 
 td {
@@ -31,7 +45,4 @@ td {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
-.navbar {
-   z-index: 999;
 }
