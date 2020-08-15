@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
+from bson.objectid import ObjectId
 import pymongo
 from dotenv import load_dotenv
 
@@ -26,8 +27,8 @@ def home():
     # if there are search terms, add it into criteria object
     if search_terms != "" and search_terms is not None:
         criteria['title'] = {
-            "$regex":search_terms, 
-            "$options":'i'
+            "$regex": search_terms,
+            "$options": 'i'
         }
     books = client[DB_NAME].bookListing.find(criteria)
     return render_template('home.template.html', books=books)
@@ -51,6 +52,37 @@ def process_add_book():
     })
     return "New book added"
 
+
+@app.route('/book/edit/<id>')
+def edit_book(id):
+    # find the book by its id
+    # match by the objectid
+    bk = client['DB_NAME'].bookListing.find_one({
+        "_id": ObjectId(id)
+
+    })
+
+    return render_template('edit_book.template.html', books=bk)
+
+
+# @ app.route('/book/edit/<id>', methods=["POST"])
+# def process_edit_book(id):
+#     book_title = request.form.get('title')
+#     book_author = request.form.get('author')
+#     book_comments = request.form.get('comments')
+
+#     client['DB_NAME'].bookListing.update_one({
+#             "_id": ObjectId(id)
+#     },  {
+#         "$set": {
+#             "title": book_title,
+#             "author": book_author,
+#             "comments": book_comments
+#          }
+
+# })
+
+#     return redirect(url_for('home')
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
