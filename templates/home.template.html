@@ -5,45 +5,46 @@
 {%block content%}
 <!-- Navbar -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mb-6">
-  <div class="container">          
-    <a class="navbar-brand" href="{{url_for('home')}}">BookReview</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	<div class="container">
+		<a class="navbar-brand" href="{{url_for('home')}}">BookReview</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{url_for('add_book')}}">Add book <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active">
+					<a class="nav-link badge badge-dark" href="{{url_for('add_book')}}">Add book
+						<span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0" method="GET">
+				<input class="form-control mr-sm-2" name="search-terms" type="text" placeholder="Search">
+				<input class="form-control btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
             </form>
-        </div>
-    </div>
+		</div>
+	</div>
 </nav>
 <!-- table -->
-<div class="hero-image-container d-flex justify-content-center h-100 align-items-center"
->   <div class="transbox">
-    <table id="books" class="table book-listing table-hover table-striped">  
-        <thread>
-            <tr id="header">
-                <th scope="col" class="align-middle">Title</th>
-                <th scope="col"class="align-middle">Author</th>
-                <th scope="col"class="align-middle">Comments</th>
-            </tr>
-        </thread>
-        <tbody>
-                {%for book in books%}
-            <tr>
-                <th id="title" class="align-middle">{{book.title}}</th>
-                <th id="author" class="align-middle">{{book.author}}</th>
-                <th id="comments" class="align-middle">{{book.comments}}</th>
-            </tr>
-                {%endfor%}
-        </tbody>
-    </table>
-    </div>
+<div class="hero-image-container d-flex justify-content-center h-100 align-items-center">
+	<div class="transbox table-responsive-sm">
+		<table id="books" class="table book-listing table-hover table-striped">
+			<thread>
+				<tr id="header">
+					<th scope="col" class="align-middle">Title</th>
+					<th scope="col" class="align-middle">Author</th>
+					<th scope="col" class="align-middle">Comments</th>
+				</tr>
+			</thread>
+			<tbody>
+				{%for book in books%}
+				<tr>
+					<th id="title" class="align-middle">{{book.title}}</th>
+					<th id="author" class="align-middle">{{book.author}}</th>
+					<th id="comments" class="align-middle">{{book.comments}}</th>
+				</tr>
+				{%endfor%}
+			</tbody>
+		</table>
+	</div>
 </div>
 {%endblock%}

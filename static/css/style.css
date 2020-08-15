@@ -1,26 +1,26 @@
-body{
-    color: black;
-    background-color: rgba(140, 148, 150, 0.6);
-    font-family: "Open Sans", sans-serif, Arial, Helvetica;
-    font-size: 15px;
-    font-weight: 500;
-    padding-top: 70px;
+body {
+  color: black;
+  background-color: rgba(140, 148, 150, 0.6);
+  font-family: "Open Sans", sans-serif, Arial, Helvetica;
+  font-size: 15px;
+  font-weight: 500;
 }
 
-html{ 
-  background: url('/static/img/background.jpg') no-repeat center center fixed;
+html {
+  background: url("/static/img/background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /* height of sticky header */
-  scroll-padding-top: 70px; 
+  scroll-padding-top: 70px;
 }
 
-#header th{
+#header th {
   background-color: rgb(28, 155, 34);
   color: white;
 }
+
 div.transbox {
   margin: 30px;
   background-color: lightgrey;
@@ -40,31 +40,34 @@ td {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-#navbar{
-    width: 100%;
-}
-#navbar+div{
-    width: 100%;
-    padding: 0px 20px;
-}
-#title{
-    color: #426625;
 
+#navbar {
+  width: 100%;
+  display: block;
 }
-#author{
-    color:#51A60A;
+#navbar + div {
+  width: 100%;
+  padding: 0px 20px;
 }
-#comments{
-    color:#5C7B42;
+#title {
+  color: #426625;
 }
-#navbar a{
-color:#5FD101;
+#author {
+  color: #51a60a;
 }
-#books{
+#comments {
+  color: #5c7b42;
+}
+#navbar a {
+  color: #5fd101;
+}
+#books {
   border-collapse: collapse;
   width: 100%;
 }
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
 }
 #books th {
@@ -72,7 +75,8 @@ table, th, td {
   padding-bottom: 12px;
   text-align: left;
 }
-#books td, #books th {
+#books td,
+#books th {
   border: 1px solid #ddd;
   padding: 10px;
 }

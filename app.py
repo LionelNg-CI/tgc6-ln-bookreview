@@ -19,7 +19,17 @@ DB_NAME = "book_review"
 
 @app.route('/')
 def home():
-    books = client[DB_NAME].bookListing.find()
+    # extract the search terms
+    search_terms = request.args.get('search-terms')
+    # create empty object
+    criteria = {}
+    # if there are search terms, add it into criteria object
+    if search_terms != "" and search_terms is not None:
+        criteria['title'] = {
+            "$regex":search_terms, 
+            "$options":'i'
+        }
+    books = client[DB_NAME].bookListing.find(criteria)
     return render_template('home.template.html', books=books)
 
 
