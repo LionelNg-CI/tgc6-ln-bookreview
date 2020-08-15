@@ -57,12 +57,11 @@ def process_add_book():
 def edit_book(id):
     # find the book by its id
     # match by the objectid
-    books = client['DB_NAME'].bookListing.find_one({
+    books = client[DB_NAME].bookListing.find_one({
         "_id": ObjectId(id)
     })
-    print(id)
+    print(books)
     return render_template('edit_book.template.html', books=books)
-
 
 # @ app.route('/book/edit/<id>', methods=["POST"])
 # def process_edit_book(id):

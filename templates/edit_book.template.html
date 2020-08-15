@@ -7,18 +7,16 @@
 	<form class="add-book" method="POST">
 		<h1>Edit/Update</h1>
 		<div class="form-group mt-3">
-        {%for book in books%}
 			<label class="form-label">Title:</label>
-			<input type="text" name="title" class="form-control title" value="123"/>
+			<input type="text" name="title" class="form-control title" value="{{books.title}}"/>
         </div>
         <div class="form-group">
             <label class="form-label">Author:</label>
-            <input type="text" name="author" class="form-control author" value="{{book.author}}"/>
+            <input type="text" name="author" class="form-control author" value="{{books.author}}"/>
         </div>
         <div class="form-group">
             <label class="form-label">Comments:</label>
-            <textarea name="comments" class="form-control comments" value="{{book.comments}}"></textarea>
-        {%endfor%}
+            <textarea name="comments" class="form-control comments" value="{{books.comments}}"></textarea>
         </div>
         <input type="submit" class="btn btn-success mx-4 my-4"/>
     </form>
