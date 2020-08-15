@@ -84,6 +84,11 @@ td {
 form h1{
 color: #5fd101;
 }
+<<<<<<< HEAD
 .add-book .form-group{
     color: #87D522;
+=======
+.add-book .form-label {
+    color: #9DDA22;
+>>>>>>> 18b3f736a8d4f07141cc32d0542a5c91f3f91ef9
 }
