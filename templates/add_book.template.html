@@ -3,20 +3,20 @@
 {%block title%}Add book{%endblock%}
 
 {%block content%}
-<form method="POST">
+<form class="add-book" method="POST">
 	<h1>Add book</h1>
 	<div class="form-group">
 		<label>Title:</label>
-		<input type="text" name="title" class="form-control"/>
+		<input type="text" name="title" class="form-control title"/>
     </div>
 	<div class="form-group">
 			<label>Author:</label>
-			<input type="text" name="author" class="form-control"/>
+			<input type="text" name="author" class="form-control author"/>
     </div>
 	<div class="form-group">
 				<label>Comments:</label>
-				<textarea name="comments" class="form-control"></textarea>
+				<textarea name="comments" class="form-control comments"></textarea>
 	</div>
-			<input type="submit" class="btn btn-primary mt-2"/>
+			<input type="submit" class="btn btn-success mt-2 mb-2"/>
 </form>
 {%endblock%}

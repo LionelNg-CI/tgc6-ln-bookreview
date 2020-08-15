@@ -80,3 +80,10 @@ td {
   border: 1px solid #ddd;
   padding: 10px;
 }
+
+form h1{
+color: #5fd101;
+}
+.add-book .title{
+    color: #51A60A;
+}
