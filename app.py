@@ -30,6 +30,7 @@ def home():
             "$regex": search_terms,
             "$options": 'i'
         }
+    # fetch data from mongodb
     books = client[DB_NAME].bookListing.find(criteria)
     return render_template('home.template.html', books=books)
 
@@ -60,30 +61,44 @@ def edit_book(id):
     books = client[DB_NAME].bookListing.find_one({
         "_id": ObjectId(id)
     })
-    print(books)
+
     return render_template('edit_book.template.html', books=books)
 
-# @ app.route('/book/edit/<id>', methods=["POST"])
-# def process_edit_book(id):
-#     book_title = request.form.get('title')
-#     book_author = request.form.get('author')
-#     book_comments = request.form.get('comments')
 
-#     client['DB_NAME'].bookListing.update_one({
-#             "_id": ObjectId(id)
-#     },  {
-#         "$set": {
-#             "title": book_title,
-#             "author": book_author,
-#             "comments": book_comments
-#          }
+@app.route('/book/edit/<id>', methods=['POST'])
+def process_edit_book(id):
+    book_title = request.form.get('title')
+    book_author = request.form.get('author')
+    book_comments = request.form.get('comments')
+    client[DB_NAME].bookListing.update_one({
+        "_id": ObjectId(id)
+    },  {
+        "$set": {
+            "title": book_title,
+            "author": book_author,
+            "comments": book_comments
+        }
+    })
+    return redirect(url_for('home'))
 
-# })
+@app.route('/book/delete/<id>')
+def delete_book(id):
+    books=client[DB_NAME].bookListing.find_one({
+        '_id': ObjectId(id)
+    })
+    return render_template('confirm_delete_book.template.html', books=books)
 
-#     return redirect(url_for('home')
+
+@app.route('/book/delete/<id>', methods=['POST'])
+def process_delete_book(id):
+    client[DB_NAME].bookListing.remove({
+        "_id" :ObjectId(id)
+    })
+    return redirect( url_for('home'))
+
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True),
+            debug=True)

@@ -1,0 +1,15 @@
+{%extends 'layout.template.html'%}
+
+{%block title%}confirm delete{%endblock%}
+
+{%block content%}
+<div class="alert alert-danger">
+    <form method="POST">
+        Are you sure you want to delete "{{books.title}}"?
+        <div>
+            <input type="submit" value="Confirm"/>   
+            <a class="btn btn-success" href="{{ url_for('home')}}">Cancel</a>
+        </div>
+    </form>
+</div>
+{%endblock%}

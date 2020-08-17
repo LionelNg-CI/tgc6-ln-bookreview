@@ -18,14 +18,14 @@
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0" method="GET">
-				<input id="searchTerms" class="form-control mr-sm-2" name="search-terms" type="text" placeholder="Search">
+				<input id="searchTerms" class="form-control mr-sm-2" name="search-terms" type="text" placeholder="Search Title">
 				<input id="searchEnt" class="form-control btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
             </form>
 		</div>
 	</div>
 </nav>
 <!-- table -->
-<div class="hero-image-container d-flex justify-content-center h-100 align-items-center">
+<div class="justify-content-center h-100">
 	<div class="transbox table-responsive-sm">
 		<table id="books" class="table book-listing table-hover table-striped">
 			<thread>
@@ -33,17 +33,31 @@
 					<th scope="col" class="align-middle">Title</th>
 					<th scope="col" class="align-middle">Author</th>
 					<th scope="col" class="align-middle">Comments</th>
+                    <th></th>
+                    <th></th>
 				</tr>
-			</thread>
-			<tbody>
-				{%for book in books%}
-				<tr>
-					<th id="title" class="align-middle">{{book.title}}</th>
-					<th id="author" class="align-middle">{{book.author}}</th>
-					<th id="comments" class="align-middle">{{book.comments}}</th>
-				</tr>
-				{%endfor%}
-			</tbody>
+            </thread>
+                <tbody>
+                    {%for book in books%}
+                    <tr> 
+                        <td id="title" class="align-middle">
+                        {{book.title}}
+                        </td>
+                        <td id="author" class="align-middle">
+                        {{book.author}}
+                        </td>
+                        <td id="comments" class="align-middle">
+                        {{book.comments}}
+                        </td>
+                        <td id="editBtn" class="align-middle">
+                            <a href="{{ url_for('edit_book', id=book._id)}}" class="btn btn-success btn-sm">Edit</a>
+                        </td> 
+                            <td id="editBtn" class="align-middle">
+                            <a href="{{ url_for('delete_book', id=book._id)}}" class="btn btn-danger btn-sm">Delete</a>
+                        </td> 
+                    </tr> 
+			        {%endfor%}
+            	</tbody>
 		</table>
 	</div>
 </div>
