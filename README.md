@@ -11,7 +11,7 @@ Two main color is picked to build this website three variation of green colors f
 ## UI
 Green color is picked for the header, light-grey on the table data and table-striped is used for easy reference between list items.
 Alternatively, users can use search field at the navigation bar to find book title available in the database.
-Add book button use 
+Add book button is at the navigation bar 
 
 ## Credits
 <span>Photo by <a href="https://unsplash.com/@randomlies?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ashim D’Silva</a> on <a href="https://unsplash.com/s/photos/book-cover?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
